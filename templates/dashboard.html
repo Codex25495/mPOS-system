@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Zuri Sands Hotel - MPOS System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div id="notificationContainer" style="position:fixed; top:20px; right:20px; z-index:9999; max-width:400px; width:100%;"></div>
+
+    <header class="header">
+        <div class="header-brand">
+            🏨 <span>Zuri Sands</span> Hotel <span class="header-subtitle">| MPOS</span>
+        </div>
+        <div class="header-right">
+            <span class="role-badge" id="roleDisplay">Loading...</span>
+            <span class="user-name" id="nameDisplay"></span>
+            <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+        </div>
+    </header>
+
+    <div class="app-container">
+        <nav class="sidebar" id="sidebar"></nav>
+        <main class="main-content" id="contentArea">
+            <div class="glass-card text-center" style="padding:40px;">
+                <div style="font-size:48px; margin-bottom:16px;">🏝️</div>
+                <h2>Loading Dashboard...</h2>
+                <p class="text-muted" style="margin-top:8px;">Please wait while we set things up</p>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        var userRole = '{{ role }}';
+        var userName = '{{ full_name }}';
+        var userUsername = '{{ username }}';
+        var userId = '{{ user_id }}';
+    </script>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
